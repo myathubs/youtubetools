@@ -1,6 +1,6 @@
 # 📝 MyatHubs Note Engine — OpenAI-powered functionality
 # Requirements for backend and transcript-based note generation
-aiohttp==3.8.1
+aiohttp==3.9.5
 fastapi==0.95.1
 httpx==0.24.1
 openai
