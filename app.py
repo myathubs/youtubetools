@@ -5,6 +5,8 @@ import googletrans
 from googletrans import Translator
 import streamlit as st
 
+st.set_page_config(page_title="📝 MyatHubs Note Engine", layout="centered")
+
 from custom_logger import logger
 # from yt_notes_generator import generate_notes_audio
 from utils import TUTORIAL_ONLY, CLASS_LECTURE
@@ -16,6 +18,8 @@ translator = Translator()
 st.set_page_config(page_title="📝 MyatHubs Note Engine", page_icon="🧠")
 
 st.title("🧠 MyatHubs Note Engine")
+st.subheader("🎥 How to Use")
+st.markdown("1. Paste a YouTube URL in the sidebar.\n2. Choose a model and prompt style.\n3. Click **Generate Notes**.\n4. View and download the generated notes below.")
 st.markdown("OpenAI-powered tool to convert YouTube videos into Burmese or English notes, summaries, and mind maps. 🇲🇲🇬🇧")
 
 # Initialize session state
@@ -114,4 +118,5 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown("Made with 🧠 by Myat Min Ko • Powered by OpenAI | [GitHub](https://github.com/myatminko)")
+st.markdown("---")
+st.markdown("🔗 [GitHub Repository](https://github.com/myatminko)\n\n💡 Made by **Myat Min Ko** | Powered by **OpenAI**")
