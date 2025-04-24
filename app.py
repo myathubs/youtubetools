@@ -1,8 +1,7 @@
 import os
 import openai
 from dotenv import load_dotenv
-import googletrans
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 import streamlit as st
 
 st.set_page_config(page_title="📝 MyatHubs Note Engine", layout="centered")
@@ -13,7 +12,7 @@ from utils import TUTORIAL_ONLY, CLASS_LECTURE
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-translator = Translator()
+translator = GoogleTranslator(source='auto', target='my')
 
 st.set_page_config(page_title="📝 MyatHubs Note Engine", page_icon="🧠")
 
@@ -96,7 +95,7 @@ if generate_button:
             )
             key_output = key_response["choices"][0]["message"]["content"]
             if translate_to_mm:
-                full_response = translator.translate(full_response, dest='my').text
+                full_response = translator.translate(full_response)
             response_placeholder.markdown(full_response)
             st.markdown("📲 **Tip:** Long-press the summary to copy and share on Messenger or Facebook.")
             st.markdown("### 🧠 Key Points & Mind Map")
